@@ -4,12 +4,18 @@
     <meta charset="utf-8">
     <title>UPJ|ログイン</title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/common.css">
     <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="./jquery-3.4.1.min.js"></script>
   </head>
   <body>
+    <header>
+      <h2 id="head_title">UPJ Game</h2>
+      <a id="new_user" href="./new_create_user.html">新規登録</a>
+    </header>
 
     <div id="login_wraper">
-      <h2 id="title_text">UPJ Game</h2>
+      <h2 id="title_text">Login</h2>
       <form class="" action="top.html" method="post">
 
             <!-- id,passwordでパラメータ格納 -->
@@ -25,7 +31,7 @@
           </table>
           <div id="errMsg">ID・PWを入力してください</div>
           <div id="submit"><a type="submit" value="ログイン">ログイン</a></div>
-          <div id="new_user"><a href="./new_create_user.html">新規登録はこちらから</a></div>
+          <!-- <div id="new_user"><a href="./new_create_user.html">新規登録はこちらから</a></div> -->
 
       </form>
     </div>

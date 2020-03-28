@@ -16,6 +16,7 @@ function input_check(){
   }
 }
 
+// ログインボタンのクリック監視
 var submit = document.getElementById('submit');
 
 submit.addEventListener('click',input_check);
