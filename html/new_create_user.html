@@ -3,10 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title>UPJ|ユーザ登録</title>
-    <link rel="stylesheet" href="../css/new_create_user.css">
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/new_create_user.css">
   </head>
   <body>
+    <header>
+      <h2 id="head_title">UPJ Game</h2>
+      <a id="new_user" href="./new_create_user.html">新規登録</a>
+    </header>
+
     <div id="modal_wrapper">
       <div id="modal">
         <h2 class="modal_text">ユーザ登録が完了しました</h2>
@@ -15,22 +21,33 @@
     </div>
 
     <div id="create_wrapper">
-      <h2 id="title_text">ユーザ登録</h2>
+      <h2 id="title_text">Create User</h2>
         <form class="new_create" action="##" method="post">
 
+        <!-- id,passwordでパラメータ格納 -->
         <table>
           <tr>
-            <th>Username</th>
+            <th>ID</th>
             <td><input class="input" id="input_id" type="text" name="id" placeholder="Unchi"></td>
           </tr>
           <tr>
-            <th>Password</th>
+            <th>PW</th>
             <td><input class="input" id="input_pass" type="password" name="password"></td>
           </tr>
           <tr>
+            <th id="no"></th>
+            <td><input class="input" id="input_again" type="password" name="again" placeholder="Confirm"></td>
+          </tr>
+          <!-- ユーザ編集画面で登録できるよにする -->
+          <!-- <tr>
             <th>E-mail</th>
             <td><input class="input" id="input_mail" type="mail" name="mail" placeholder="abc@gmail.com"></td>
           </tr>
+          <tr>
+            <th>picture</th>
+            <td><input class="input" id="input_picture" type="file" name="picture"></td>
+          </tr> -->
+
         </table>
         <div id="errMsg">未入力欄があります</div>
         <div id="btn_area"><a id="reset" class="btn">リセット</a><a id="submit" class="btn">登録</a></div>
