@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Click Game</title>
+    <link rel="stylesheet" type="text/css" href="../css/clickGame.css">
+  </head>
+  <body>
+    <div id="unko_modal" class="hide">
+      <div id="modal">
+        <div class="close-modal">
+          <i class="fa fa-2x fa-times">×</i>
+        </div>
+        <h2 id="point"></h2>
+      </div>
+    </div>
+
+    <div id="parent-controller">
+    <div id="time">10</div>
+    <div id="parent-btn">
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+    </div>
+    </div>
+    <div id="area">
+    </div>
+    <img  id="target" src="../pictures/unchar.png" alt="うんこ">
+    <script>
+      function clickGame(){
+      var area = document.getElementById('area');
+
+      //球体の位置設定情報を取得
+      function moveArea(){
+        var x = Math.floor(Math.random()*800);
+        var y = Math.floor(Math.random()*600);
+
+        return { x: x , y: y };
+      }
+
+      //ボールの要素を取得
+      var target = document.getElementById('target');
+
+      var move_intervalId = setInterval(function(){
+        var move = moveArea();
+        target.style.left = move.x + 'px';
+        target.style.top = move.y + 'px';
+      },1000)
+
+      var count = 0;
+
+      function touchTarget(){
+        count++;
+      }
+
+      // モーダルの要素を取得
+      var modal = document.getElementById('unko_modal');
+      var point = document.getElementById('point');
+
+      //制限時間の表示
+      var timelimit = document.getElementById('time').textContent;
+      var time_intervalId = setInterval(function(){
+        document.getElementById('time').textContent = ('0' + timelimit--).slice(-2);
+        if(timelimit == -1){
+          clearInterval(time_intervalId);
+          clearInterval(move_intervalId);
+          modal.className = 'show';
+          point.textContent = count + 'p Get!';
+          // alert(count + '回クリックしました！');
+        }
+      },1000);
+
+      // モーダルを隠す
+      function close_modal(){
+        modal.className = 'hide';
+      }
+      modal.addEventListener('click',close_modal);
+
+      function cursolOver(){
+        target.style.webkitTransform = "scale(1.5,1.5)";
+      }
+
+      function cursolOut(){
+        target.style.webkitTransform = "scale(1,1)";
+      }
+
+      target.addEventListener('click',touchTarget);
+      target.addEventListener('mouseover',cursolOver);
+      target.addEventListener('mouseout',cursolOut);
+    }
+
+    function resetBtn(){
+      location.reload();
+    }
+
+    var start = document.getElementById('start');
+    start.addEventListener('click',function(){
+      clickGame();
+    });
+
+    var reset = document.getElementById('reset');
+    reset.addEventListener('click',function(){
+      resetBtn();
+    });
+
+    </script>
+  </body>
+</html>
