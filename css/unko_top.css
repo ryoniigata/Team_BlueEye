@@ -1,0 +1,114 @@
+body {
+  background-image: url(../pictures/sougen.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+#drag_area {
+  float: left;
+  margin-top: 5%;
+  width: 15%;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+
+.drag_object {
+  width: 45%;
+  margin: auto;
+}
+
+#meun {
+  width: 20%;
+  margin: auto;
+}
+
+.menu_object {
+  width: 20%;
+}
+
+/* #drop_area {
+  float: left;
+  margin-left: 200px;
+} */
+
+#drop_area {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#drop_object {
+  -webkit-animation: anime1 0.5s ease-in-out 0s infinite normal;
+}
+
+@-webkit-keyframes anime1 {
+  0% {transform: translate(0px, 0px) rotateZ(0deg)}
+  25% {transform: translate(2px, 2px) rotateZ(5deg)}
+  50% {transform: translate(0px, 2px) rotateZ(0deg)}
+  75% {transform: translate(2px, 0px) rotateZ(-5deg)}
+  100% {transform: translate(-2px, -2px) rotateZ(0deg)}
+}
+
+#unko_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+#modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  width: 30%;
+  height: auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+table {
+  margin: auto;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+}
+
+td {
+  padding-left: 10px;
+}
+
+
+/* #status {
+  text-align: left;
+  margin-left: 40%;
+} */
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}

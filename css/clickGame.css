@@ -1,0 +1,98 @@
+/* body {
+  background-image: url(toilet.png);
+  background-repeat: no-repeat;
+} */
+
+
+
+#parent-controller {
+  width: 200px;
+  height: 100px;
+  background: silver;
+  margin: 0 auto;
+}
+
+#time {
+  font-size:40px;
+  margin: 0 auto;
+  text-align:center;
+}
+
+#parent-btn {
+  text-align: center;
+}
+
+#start {
+   width: 50px;
+   height:30px;
+   border-radius:30%;
+   display: block;
+   margin: 0 auto;
+   text-align:center;
+   display: inline-block;
+}
+
+#reset {
+   width: 50px;
+   height:30px;
+   border-radius:30%;
+   display: block;
+   margin: 0 auto;
+   text-align:center;
+   display: inline-block;
+}
+
+#area {
+  width:600px;
+  height:800px;
+  position:relative;
+}
+
+#target {
+  position:absolute;
+  width:100px;
+  height:100px;
+}
+
+/* モーダルの設定 */
+#unko_modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+#modal {
+  position: absolute;
+  top: 20%;
+  left: 34%;
+  background-color: #e6ecf0;
+  padding: 20px 0 40px;
+  width: 30%;
+  height: auto;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.fa {
+  margin-right: 5px;
+}
+
+.fa-times {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+}
